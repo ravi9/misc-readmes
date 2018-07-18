@@ -37,6 +37,11 @@ sudo systemctl start docker
 
 #Test the docker installation
 sudo docker run hello-world
+
+#Run Docker without sudo prefix
+sudo groupadd docker
+sudo usermod -aG docker $USER
+
 ```
 
 Configure proxy for Docker, If you are behind a proxy
