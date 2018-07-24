@@ -8,11 +8,6 @@ Official install instructions: https://docs.docker.com/install/linux/docker-ce/u
 #Uninstall existing installations
 sudo apt-get remove docker docker-engine docker.io
 
-#Install prereqs
-sudo yum install -y yum-utils \
-  device-mapper-persistent-data \
-  lvm2
-
 #setup  repo and Add Docker’s official GPG key
 sudo apt-get update
 sudo apt-get install \
