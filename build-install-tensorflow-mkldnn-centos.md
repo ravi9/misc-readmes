@@ -27,7 +27,7 @@ Install Bazel
 ```
 wget https://github.com/bazelbuild/bazel/releases/download/0.16.0/bazel-0.16.0-installer-linux-x86_64.sh
 chmod +x bazel-0.16.0-installer-linux-x86_64.sh
-./bazel-0.16.0-installer-linux-x86_64
+./bazel-0.16.0-installer-linux-x86_64.sh
 source /usr/local/lib/bazel/bin/bazel-complete.bash
 ```
 
