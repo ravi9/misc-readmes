@@ -4,6 +4,8 @@ Docker-CE Install instructions on Ubuntu
 
 Official install instructions: https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
+Asciinema: https://asciinema.org/a/225444
+
 ```
 #Uninstall existing installations
 sudo apt-get remove docker docker-engine docker.io
@@ -31,6 +33,14 @@ sudo apt-get install docker-ce
 
 #Test the docker installation
 sudo docker run hello-world
+
+#Setup docker to be used as a non-root user, to run docker commands without sudo.
+#Exit and restart your SSH session so that your username is in effect in the docker group.
+sudo usermod -aG docker `whoami`
+
+#After exiting and restarting your SSH session, you should be able to run docker commands without sudo.
+docker run hello-world
+
 ```
 
 Configure proxy for Docker, If you are behind a proxy
