@@ -6,6 +6,13 @@ Official install instructions: https://docs.docker.com/install/linux/docker-ce/u
 
 Asciinema: https://asciinema.org/a/225444
 
+#### Option 1: The easy way:
+```
+curl -fsSL https://get.docker.com -o get-docker.sh &&
+sudo sh get-docker.sh && 
+sudo usermod -aG docker $USER
+```
+#### Option 2: The traditional way:
 ```
 #Uninstall existing installations
 sudo apt-get remove docker docker-engine docker.io
