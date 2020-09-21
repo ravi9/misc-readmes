@@ -18,3 +18,6 @@ Following are some of the articles:
 10. [Federated learning in medicine:facilitating multi‑institutional collaborations without sharing patient data](https://www.nature.com/articles/s41598-020-69250-1.pdf) 
 
 #### Some more training use-cases: See [Intel AI Builders Results](https://builders.intel.com/advanced-search?igq=training&program=AI&page=1) 
+
+How-to-articles:
+1[Best Practices for Scaling Deep Learning Training and Inference with TensorFlow* On Intel® Xeon® Processor-Based HPC Infrastructures](https://www.intel.com/content/www/us/en/artificial-intelligence/solutions/best-known-methods-for-scaling-deep-learning-with-tensorflow-on-xeon-processor-based-clusters.html)
