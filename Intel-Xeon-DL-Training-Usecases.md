@@ -20,4 +20,4 @@ Following are some of the articles:
 #### Some more training use-cases: See [Intel AI Builders Results](https://builders.intel.com/advanced-search?igq=training&program=AI&page=1) 
 
 How-to-articles:
-1[Best Practices for Scaling Deep Learning Training and Inference with TensorFlow* On Intel® Xeon® Processor-Based HPC Infrastructures](https://www.intel.com/content/www/us/en/artificial-intelligence/solutions/best-known-methods-for-scaling-deep-learning-with-tensorflow-on-xeon-processor-based-clusters.html)
+1. [Best Practices for Scaling Deep Learning Training and Inference with TensorFlow* On Intel® Xeon® Processor-Based HPC Infrastructures](https://www.intel.com/content/www/us/en/artificial-intelligence/solutions/best-known-methods-for-scaling-deep-learning-with-tensorflow-on-xeon-processor-based-clusters.html)
