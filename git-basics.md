@@ -103,3 +103,9 @@ Discards the most recently stashed changeset.
 git stash drop
 ```
 
+Get remote URL, get the URL of the repo
+```
+git config --get remote.origin.url
+OR
+git remote show origin
+```
