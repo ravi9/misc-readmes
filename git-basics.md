@@ -33,6 +33,11 @@ Edit a commit message
 git commit --amend -m "New message"
 ```
 
+Adds your staged changes to the last commit you pushed without adding an additional commit message.
+```
+git commit --amend
+```
+
 Add and commit - Not recommended for beginners.
 ```
 git commit -am "message"
@@ -67,6 +72,15 @@ git config -global user.name "[name]"
 git config -global user.email "[email address]"
 ```
 
+Retrieves changes and additions from a remote repository, however doesn’t change any of your local branches.
+```
+git fetch
+```
+
+pulls changes from a remote repository into your current branch. Basically doing a git fetch followed by a git merge.
+```
+git pull 
+```
 
 This command shows the differences between the files in the staging area and the latest version present.
 ```
