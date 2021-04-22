@@ -134,3 +134,8 @@ git branch -m master  # Rename the current branch to master
 git push -f origin master  # Force push master branch to github
 git gc --aggressive --prune=all     # remove the old files
 ```
+
+You can view all of your settings and where they are coming from using:
+```
+git config --list --show-origin
+```
