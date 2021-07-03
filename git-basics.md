@@ -1,3 +1,6 @@
+Nice resource: https://github.com/k88hudson/git-flight-rules
+
+
 To stage new, modified or deleted files:
 ```
 git add -A
