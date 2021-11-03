@@ -19,6 +19,9 @@ With distributed training on cluster of Xeons, one can utilize larger memory to
 1. [How DeepVariant Uses Intel’s AVX-512 Optimizations](https://google.github.io/deepvariant/posts/2019-04-30-the-power-of-building-on-an-accelerating-platform-how-deepVariant-uses-intels-avx-512-optimizations/)
 1. [Federated learning in medicine:facilitating multi‑institutional collaborations without sharing patient data](https://www.nature.com/articles/s41598-020-69250-1.pdf) 
 1. [Application of a Tiled Fully Convolutional Network to Whole Image Predictions Leads to Lower Latency Inference](https://cdn.ymaws.com/siim.org/resource/resmgr/mimi20/abstracts/application_of_a_tiled_reina.pdf) 
+1. [Addressing the Memory Bottleneck in AI Model-Training for Healthcare](https://downloads.dell.com/manuals/common/dellemc_overcoming_memory_bottleneck_ai_healthcare.pdf)
+1. [Slidecast: Dell EMC Using Neural Networks to “Read Minds”](https://insidehpc.com/2019/11/slidecast-dell-emc-using-neural-networks-to-read-minds/)
+1. [Paving a New Path to AI-Driven Neuroscience](https://www.delltechnologies.com/asset/en-us/products/ready-solutions/customer-stories-case-studies/dell-mcgill-case-study.pdf)
 
 ### Some more training use-cases: See [Intel AI Builders Results](https://builders.intel.com/advanced-search?igq=training&program=AI&page=1) 
 
