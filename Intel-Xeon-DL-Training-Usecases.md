@@ -16,6 +16,7 @@ With distributed training on cluster of Xeons, one can utilize larger memory to
 1. [Efficient neural network training on Intel Xeon-based supercomputers](https://conferences.oreilly.com/artificial-intelligence/ai-ca-2018/public/schedule/detail/71396.html)
 1. [Adverse Effects of Image Tiling on Convolutional Neural Networks](https://www.springerprofessional.de/en/adverse-effects-of-image-tiling-on-convolutional-neural-networks/16457516)
 1. [Adverse Effects Of Image Tiling For Automatic Deep Learning Glioma Segmentation In MRI](https://academic.oup.com/neuro-oncology/article-abstract/21/Supplement_6/vi174/5619750?redirectedFrom=fulltext)
+1. [Systematic Evaluation of Image Tiling Adverse Effects on Deep Learning Semantic Segmentation](https://www.frontiersin.org/articles/10.3389/fnins.2020.00065/full)
 1. [How DeepVariant Uses Intel’s AVX-512 Optimizations](https://google.github.io/deepvariant/posts/2019-04-30-the-power-of-building-on-an-accelerating-platform-how-deepVariant-uses-intels-avx-512-optimizations/)
 1. [Federated learning in medicine:facilitating multi‑institutional collaborations without sharing patient data](https://www.nature.com/articles/s41598-020-69250-1.pdf) 
 1. [Application of a Tiled Fully Convolutional Network to Whole Image Predictions Leads to Lower Latency Inference](https://cdn.ymaws.com/siim.org/resource/resmgr/mimi20/abstracts/application_of_a_tiled_reina.pdf) 
