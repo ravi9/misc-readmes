@@ -19,6 +19,28 @@
 | Linux On Demand cost | $1.204000 hourly                      |
 ```
 
+```
+ubuntu@ip-10-0-11-81:~$ nvidia-smi
+Tue Sep 13 22:36:29 2022       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 510.47.03    Driver Version: 510.47.03    CUDA Version: 11.6     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Tesla T4            On   | 00000000:00:1E.0 Off |                    0 |
+| N/A   46C    P8    14W /  70W |      0MiB / 15360MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+
+$ nvcc --version
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2021 NVIDIA Corporation
+Built on Sun_Feb_14_21:12:58_PST_2021
+Cuda compilation tools, release 11.2, V11.2.152
+Build cuda_11.2.r11.2/compiler.29618528_0
+```
 
 ### Steps for building OVMS with NVIDIA Plugin 
 1. Install OpenVINO from Source
