@@ -32,37 +32,19 @@ pip install openvino-dev[onnx,tensorflow2,pytorch]
 
 ## Step 3: Benchmark Sample model
 
-- 3.1 Download BiT model
+- Download `googlenet-v1-tf` model from OpenVINO Model Zoo (OMZ)
 ```sh
-wget https://tfhub.dev/google/bit/m-r50x1/1?tf-hub-format=compressed -O bit_m_r50x1_1.tar.gz
-mkdir -p bit_m_r50x1_1 && tar -xvf bit_m_r50x1_1.tar.gz -C bit_m_r50x1_1
-```
-- 3.2 Run Model Optimizer
-
-```sh
-mo --framework tf \
- --data_type FP32 \
- --saved_model_dir ./bit_m_r50x1_1 \
- --output_dir ov_irs/bit_m_r50x1_1/ 
+omz_downloader --name googlenet-v1-tf
 ```
 
-- Run [Benchmark APP](https://docs.openvino.ai/latest/openvino_inference_engine_tools_benchmark_tool_README.html)
+- Convert googlenet-v1-tf model to OpenVINO IR
+```sh
+omz_converter --name googlenet-v1-tf
+```
+
+- Benchmark googlenet-v1-tf model with [OpenVINO Benchmark App](https://docs.openvino.ai/latest/openvino_inference_engine_tools_benchmark_tool_README.html)
 ```sh
 benchmark_app \
- -m ov_irs/bit_m_r50x1_1/saved_model.xml \
- -d CPU \
- -shape [1,128,128,3] \
- -hint latency \
- -t 10
+-m public/googlenet-v1-tf/FP32/googlenet-v1-tf.xml \
+-hint throughput 
 ```
-- To run on GPU, set `-d GPU`. If there are multiple GPU's then there will using either `GPU.0` or `GPU.1`
-- The list of available devices can be seen at the end when you run `benchmark_app -h`.
-```sh
- benchmark_app \
- -m ov_irs/bit_m_r50x1_1_FP16/saved_model.xml \
- -d GPU \
- -shape [1,128,128,3] \
- -hint latency \
- -t 10
- 
- 
