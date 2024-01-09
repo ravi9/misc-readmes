@@ -4,7 +4,7 @@
 ##
 
 # Setup Env
-$LLAMA_WRKSP="/tmp/llama-wrksp/"
+LLAMA_WRKSP="/tmp/llama-wrksp/"
 mkdir $LLAMA_WRKSP
 cd $LLAMA_WRKSP/
 
