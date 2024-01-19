@@ -27,13 +27,13 @@ pip install open_clip_torch
 
 mkdir $LLAMA_WRKSP/llava_med_model
 
-# Download the base model - llama-2-7b-hf
-git lfs install
-git clone https://huggingface.co/meta-llama/Llama-2-7b-hf 
-#git clone https://USER:TOKEN@huggingface.co/meta-llama/Llama-2-7b-hf 
+# Download the base model - luodian/llama-7b-hf
+# git lfs install
+# git clone https://huggingface.co/luodian/llama-7b-hf
+# #git clone https://USER:TOKEN@huggingface.co/meta-llama/Llama-2-7b-hf 
 
 python3 -m llava.model.apply_delta \
-    --base Llama-2-7b-hf \
+    --base luodian/llama-7b-hf \
     --target $LLAMA_WRKSP/llava_med_model \
     --delta $LLAMA_WRKSP/llava_med_in_text_60k_ckpt2_delta/
 
