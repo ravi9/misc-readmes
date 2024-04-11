@@ -53,6 +53,21 @@
 - `ssh`: Securely connect to a remote server.
   - `ssh user@host`: Connect to `host` as `user`.
 
+- Connect to destination-host via jump-host with proxy. Add the following in `~/.ssh/config`. Then we can `ssh destination-host`
+```
+Host jump-host
+    HostName 100.100.100.111
+    User guest
+    IdentityFile ~/.ssh/id_rsa
+    ProxyCommand nc -x proxy.company.com:1122 %h %p
+
+Host destination-host
+    HostName 200.200.200.222
+    User ravi
+    IdentityFile ~/.ssh/id_rsa
+    ProxyCommand ssh -q -W %h:%p jump-host
+```
+
 - `scp`: Securely copy files between hosts.
   - `scp file.txt user@host:/path/`: Copy `file.txt` to `/path/` on `host` as `user`.
 
