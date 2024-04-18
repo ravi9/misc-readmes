@@ -6,13 +6,33 @@ Official install instructions: https://docs.docker.com/install/linux/docker-ce/u
 
 Asciinema: https://asciinema.org/a/225444
 
-#### Option 1: The easy way:
+#### Option 1: The [snap way](https://snapcraft.io/install/docker/ubuntu):
+```
+sudo apt update
+sudo snap install docker
+
+sudo groupadd docker &&
+sudo usermod -aG docker $USER
+
+sudo chmod 666 /var/run/docker.sock
+
+# The service name is different as it is installed with snap
+systemctl status snap.docker.dockerd.service
+
+```
+
+#### Option 2: The scripted way:
 ```
 curl -fsSL https://get.docker.com -o get-docker.sh &&
-sudo sh get-docker.sh && 
+sudo sh get-docker.sh &&
+sudo groupadd docker &&
 sudo usermod -aG docker $USER
+
+sudo chmod 666 /var/run/docker.sock
+sudo systemctl restart docker
 ```
-#### Option 2: The traditional way:
+
+#### Option 3: The traditional way:
 ```
 #Uninstall existing installations
 sudo apt-get remove docker docker-engine docker.io
@@ -50,7 +70,7 @@ docker run hello-world
 
 ```
 
-Configure proxy for Docker, If you are behind a proxy
+## Configure proxy for Docker, If you are behind a proxy
 ------
 Official docker doc for proxy-setup: https://docs.docker.com/engine/admin/systemd/#http-proxy
 
