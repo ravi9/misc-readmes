@@ -4,6 +4,8 @@
 ##
 
 # Setup Env
+sudo apt install git-lfs
+
 LLAMA_WRKSP="/tmp/llama-wrksp/"
 mkdir $LLAMA_WRKSP
 cd $LLAMA_WRKSP/
@@ -31,6 +33,9 @@ mkdir $LLAMA_WRKSP/llava_med_model
 # git lfs install
 # git clone https://huggingface.co/luodian/llama-7b-hf
 # #git clone https://USER:TOKEN@huggingface.co/meta-llama/Llama-2-7b-hf 
+# huggingface-cli login
+
+huggingface-cli login
 
 python3 -m llava.model.apply_delta \
     --base luodian/llama-7b-hf \
