@@ -85,6 +85,7 @@ vi /etc/systemd/system/docker.service.d/http-proxy.conf
 [Service]
 Environment="HTTP_PROXY=http://proxy.example.com:80/"
 Environment="HTTPS_PROXY=http://proxy.example.com:443/"
+Environment="NO_PROXY=localhost,127.0.0.1,::1"
 
 #Flush changes and restart docker
 sudo systemctl daemon-reload
@@ -107,13 +108,17 @@ sudo vi /etc/systemd/system/snap.docker.dockerd.service.d/http-proxy.conf
 [Service]
 Environment="HTTP_PROXY=http://proxy.example.com:80/"
 Environment="HTTPS_PROXY=http://proxy.example.com:443/"
+Environment="NO_PROXY=localhost,127.0.0.1,::1"
 
 #Flush changes and restart docker
 sudo systemctl daemon-reload
-sudo systemctl restart docker
+systemctl restart snap.docker.dockerd.service
+
+# If needed to run docker without sudo
+sudo chmod 666 /var/run/docker.sock
 
 #Verify settings
-systemctl show --property=Environment docker
+systemctl show --property=Environment snap.docker.dockerd.service
 
 #Test docker installation
 docker run hello-world
