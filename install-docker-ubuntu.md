@@ -7,7 +7,7 @@ Official install instructions: https://docs.docker.com/install/linux/docker-ce/u
 Asciinema: https://asciinema.org/a/225444
 
 #### Option 1: The [snap way](https://snapcraft.io/install/docker/ubuntu):
-```
+```bash
 sudo apt update
 sudo snap install docker
 
@@ -23,7 +23,7 @@ systemctl status snap.docker.dockerd.service
 ```
 
 #### Option 2: The scripted way:
-```
+```bash
 curl -fsSL https://get.docker.com -o get-docker.sh &&
 sudo sh get-docker.sh &&
 sudo groupadd docker &&
@@ -34,7 +34,7 @@ sudo systemctl restart docker
 ```
 
 #### Option 3: The traditional way:
-```
+```bash
 #Uninstall existing installations
 sudo apt-get remove docker docker-engine docker.io
 
@@ -76,7 +76,7 @@ docker run hello-world
 Official docker doc for proxy-setup: https://docs.docker.com/engine/admin/systemd/#http-proxy
 
 #### If installed via "APT"
-```
+```bash
 #Create a systemd drop-in directory for the docker service and add conf files:
 sudo mkdir -p /etc/systemd/system/docker.service.d
 
@@ -99,7 +99,7 @@ docker run hello-world
 ```
 
 #### If installed via "SNAP"
-```
+```bash
 #Create a systemd drop-in directory for the docker service and add conf files:
 sudo mkdir -p /etc/systemd/system/snap.docker.dockerd.service.d
 
@@ -124,11 +124,30 @@ systemctl show --property=Environment snap.docker.dockerd.service
 docker run hello-world
 ```
 
+#### Alternatively, if your proxy and other environment settings are already in another file:
+```bash
+#Create a systemd drop-in directory for the docker service and add conf files:
+sudo mkdir -p /etc/systemd/system/docker.service.d
+
+sudo vi /etc/systemd/system/snap.docker.dockerd.service.d/http-proxy.conf
+# ADD THE Following lines
+[Service]
+EnvironmentFile=/etc/environment
+
+#Flush changes and restart docker
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+
+#Test docker installation
+docker run hello-world
+
+```
+
 ## Troubleshooting
 
 #### Client.Timeout exceeded Error
 If you get the following error, you maybe behind a proxy, so setup Proxy as explained above.
-```
+```bash
 docker pull hello-world
 Using default tag: latest
 Error response from daemon: Get "https://registry-1.docker.io/v2/": net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)
@@ -136,7 +155,7 @@ Error response from daemon: Get "https://registry-1.docker.io/v2/": net/http: re
 
 #### Got permission denied Error
 If you get the following error, set sudo permissions properly as described above.
-```
+```bash
 Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/json: dial unix /var/run/docker.sock: connect: permission denied
 
 ```
