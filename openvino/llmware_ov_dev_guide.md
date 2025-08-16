@@ -218,6 +218,7 @@ The OpenVINO model loading follows these phases when `ModelCatalog().load_model(
 
 The caching behavior can be customized through `OVConfig` methods if needed, such as disabling caching with `OVConfig().set_config("cache", False)` or setting a custom cache path.
 
+Below is a sample to inspect model storage locations and verify downloaded OpenVINO models and caches locally.
 ```python
 from llmware.configs import LLMWareConfig  
 from llmware.models import ModelCatalog
