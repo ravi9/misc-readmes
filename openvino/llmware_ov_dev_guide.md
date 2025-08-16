@@ -18,7 +18,7 @@
 
 ## Introduction
 
-This guide provides a concise walkthrough for developers on using [LLMWare](https://github.com/llmware-ai/llmware/tree/main/examples/Getting_Started) with [OpenVINO](https://docs.openvino.ai/2025/index.html) to build high-performance AI applications. LLMWare's integration with OpenVINO is designed to be seamless and straightforward. The core principle is that OpenVINO models are treated as **"drop-in" replacements** for any other model type in `llmware`. This is achieved by loading all models through the standard `ModelCatalog` interface. To use an OpenVINO-optimized model, you simply need to select a model with the `-ov` suffix from the [catalog](https://huggingface.co/llmware/models?search=-ov).
+This guide provides a concise walkthrough for developers on using [LLMWare](https://llmware-ai.github.io/llmware/getting_started) with [OpenVINO](https://docs.openvino.ai/2025/index.html) to build high-performance AI applications. LLMWare's integration with OpenVINO is designed to be seamless and straightforward. The core principle is that OpenVINO models are treated as **"drop-in" replacements** for any other model type in `llmware`. This is achieved by loading all models through the standard `ModelCatalog` interface. To use an OpenVINO-optimized model, you simply need to select a model with the `-ov` suffix from the [Model Catalog](https://huggingface.co/llmware/models?search=-ov).
 
 ```python
 from llmware.models import ModelCatalog
