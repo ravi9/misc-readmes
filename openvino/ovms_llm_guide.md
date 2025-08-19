@@ -6,7 +6,8 @@
 
 *   [OpenVINO™ Model Server - LLM QuickStart guide](https://docs.openvino.ai/2025/model-server/ovms_docs_llm_quickstart.html).
 *   [Full list of OVMS Demos](https://docs.openvino.ai/2025/model-server/ovms_docs_demos.html)
-*   [OVMS GenAI Demos](https://docs.openvino.ai/2025/model-server/ovms_docs_demos.html#check-out-new-generative-ai-demos) 
+*   [OVMS GenAI Demos](https://docs.openvino.ai/2025/model-server/ovms_docs_demos.html#check-out-new-generative-ai-demos)
+*   [Efficient LLM Serving](https://docs.openvino.ai/2025/model-server/ovms_docs_llm_reference.html#caching-settings)
 
 
 ### Model Preparation
