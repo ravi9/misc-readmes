@@ -54,5 +54,6 @@ python export_model.py text_generation \
 * [Model Server Parameters](https://docs.openvino.ai/2025/model-server/ovms_docs_parameters.html)
 
 ### Performance Tuning
-*  [Performance tuning guide](https://docs.openvino.ai/2025/model-server/ovms_docs_performance_tuning.html) 
+*  [Performance tuning guide](https://docs.openvino.ai/2025/model-server/ovms_docs_performance_tuning.html)
+*  [Efficient LLM Serving](https://docs.openvino.ai/2025/model-server/ovms_docs_llm_reference.html#caching-settings
 *  [Using AI accelerators (GPU, NPU)](https://docs.openvino.ai/2025/model-server/ovms_docs_target_devices.html).
