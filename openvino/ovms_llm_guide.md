@@ -61,6 +61,7 @@ python export_model.py text_generation \
 
 ### Quick Start
 
+* [test-ovms-openai-client.py](https://github.com/ravi9/misc-scripts/blob/main/openvino/test-ovms-openai-client.py)
 ```bash
 python3 -m venv omvs-env
 source omvs-env/bin/activate
