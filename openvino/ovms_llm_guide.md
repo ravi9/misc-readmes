@@ -58,3 +58,89 @@ python export_model.py text_generation \
 *  [Performance tuning guide](https://docs.openvino.ai/2025/model-server/ovms_docs_performance_tuning.html)
 *  [Efficient LLM Serving](https://docs.openvino.ai/2025/model-server/ovms_docs_llm_reference.html#caching-settings)
 *  [Using AI accelerators (GPU, NPU)](https://docs.openvino.ai/2025/model-server/ovms_docs_target_devices.html).
+
+### Quick Start
+
+```bash
+python3 -m venv omvs-env
+source omvs-env/bin/activate
+
+# Version v2025.2.1
+wget https://raw.githubusercontent.com/openvinotoolkit/model_server/refs/tags/v2025.2.1/demos/common/export_models/export_model.py
+wget https://raw.githubusercontent.com/openvinotoolkit/model_server/refs/tags/v2025.2.1/demos/common/export_models/requirements.txt
+
+pip install -r requirements.txt
+
+#Qwen3 Example:
+# Option1: download OV int8 model directly
+python export_model.py text_generation \
+    --source_model OpenVINO/Qwen3-4B-int8-ov \
+    --model_name OpenVINO/Qwen3-4B-int8-ov \
+    --model_repository_path models \
+    --target_device GPU \
+    --cache 2 \
+    --kv_cache_precision u8 \
+    --tools_model_type qwen3 \
+    --config_file_path models/config.json
+
+# Option 2: download source model from HF and convert to OV int8
+python export_model.py text_generation \
+    --source_model Qwen/Qwen3-4B \
+    --model_name Qwen/Qwen3-4B-int8-ov \
+    --weight-format int8 \
+    --model_repository_path models \
+    --target_device GPU \
+    --cache 2 \
+    --kv_cache_precision u8 \
+    --tools_model_type qwen3 \
+    --config_file_path models/config.json
+
+# Deploy using docker on GPU, for CPU use openvino/model_server:latest, :
+docker run --rm -p 8000:8000 \
+    --device /dev/dri \
+    --group-add=$(stat -c "%g" /dev/dri/render* | head -n 1) \
+    -v $(pwd)/models:/workspace:ro \
+    openvino/model_server:latest-gpu \
+    --port 9000 --rest_port 8000 \
+    --config_path /workspace/config.json    
+
+# Verify Model status:
+curl http://localhost:8000/v1/config
+
+# Test by sending a request
+curl -s http://localhost:8000/v3/chat/completions \
+-H "Content-Type: application/json" \
+-d '{
+  "model": "Qwen/Qwen3-4B-int8-ov",
+  "max_tokens": 100,
+  "temperature": 0,
+  "stream": false,
+  "messages": [
+    { "role": "user", "content": "The story of AI is " }
+  ]
+}' | jq .
+
+
+# Test using OpenAI Python Script
+from openai import OpenAI
+
+client = OpenAI(
+  base_url="http://localhost:8000/v3",
+  api_key="unused"
+)
+
+model_name = "Qwen/Qwen3-4B-int8-ov"
+
+stream = client.chat.completions.create(
+    model=model_name,
+    messages=[
+              {"role": "user", "content": "The story of AI is "}
+    ],
+    max_tokens=100,
+    stream=True
+)
+for chunk in stream:
+    if chunk.choices[0].delta.content is not None:
+        print(chunk.choices[0].delta.content, end="", flush=True)
+
+```
