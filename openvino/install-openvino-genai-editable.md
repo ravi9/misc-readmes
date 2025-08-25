@@ -43,6 +43,7 @@ python -m pip install -e .
 Rebuild after modifying C++ files.
 ```bash
 mkdir build && cd build
+cmake ..
 cmake --build . --config Release --verbose --parallel
 make -j
 
