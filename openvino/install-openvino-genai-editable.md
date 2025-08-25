@@ -1,20 +1,28 @@
 # OpenVINO GenAI Setup for Development
 
-Quick setup guide for OpenVINO GenAI development environment.
+Quick guide for OpenVINO GenAI development environment.
 
 ## Prerequisites (Linux)
-For detailed instrcutions: [Documentation](https://github.com/openvinotoolkit/openvino.genai/blob/master/src/docs/BUILD.md)
+For detailed instructions: [Documentation](https://github.com/openvinotoolkit/openvino.genai/blob/master/src/docs/BUILD.md)
+
 **Software Requirements:**
 - CMake 3.23 or higher
 - GCC 7.5 or higher  
 - Python 3.9 or higher
 - Git
 
+
+
+## Installation
+
+```
+python3 -m venv ov-dev-env
+source ov-dev-env/bin/activate
+```
+
 ```bash
 pip install openvino
 ```
-
-## Installation
 
 ```bash
 git clone https://github.com/openvinotoolkit/openvino.genai.git
@@ -26,7 +34,7 @@ git submodule update --init --recursive
 ## Development Setup
 
 ### Python Development (Editable Install)
-Changes to Python source code in openvino.genai are reflected immediately without reinstalling.
+Changes to Python source code in `openvino.genai` are reflected immediately without reinstalling.
 ```bash
 python -m pip install -e .
 ```
@@ -45,4 +53,4 @@ python -m pip install -e .
 ## Notes
 - Ensure OpenVINO and GenAI versions match for compatibility
 - Use editable install (`-e`) for active Python development
-- C++ changes require manual rebuild
+- C++ changes require a manual rebuild
