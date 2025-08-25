@@ -42,10 +42,8 @@ python -m pip install -e .
 ### C++ Development
 Rebuild after modifying C++ files.
 ```bash
-mkdir build && cd build
-cmake ..
-cmake --build . --config Release --verbose --parallel
-make -j
+cmake -DCMAKE_BUILD_TYPE=Release -S ./ -B ./build/
+cmake --build ./build/ --config Release -j
 
 cd ..
 python -m pip install -e .
