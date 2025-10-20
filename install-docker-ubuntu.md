@@ -6,11 +6,12 @@ Official install instructions: https://docs.docker.com/install/linux/docker-ce/u
 
 Asciinema: https://asciinema.org/a/225444
 
-| Installation | Proxy Config | Troubleshooting |
-|--------------|---------------|-----------------|
-| [Snap](#option-1-the-snap-way) | [SNAP](#if-installed-via-snap) | [Timeout](#clienttimeout-exceeded-error) |
-| [Script](#option-2-the-scripted-way) | [APT](#if-installed-via-apt) | [Permissions](#got-permission-denied-error) |
-| [Traditional](#option-3-the-traditional-way) | [Alternative](#alternatively-if-your-proxy-and-other-environment-settings-are-already-in-another-file) | |
+| _     | Installation | Proxy Config | Troubleshooting |
+|------------|--------------|--------------|----------------|
+| Option 1   | [Snap](#option-1-the-snap-way) | [SNAP](#if-installed-via-snap) | [Timeout](#clienttimeout-exceeded-error) |
+| Option 2   | [Script](#option-2-the-scripted-way) | [APT](#if-installed-via-apt) | [Permissions](#got-permission-denied-error) |
+| Option 3   | [Traditional](#option-3-the-traditional-way) | [Alternative](#alternatively-if-your-proxy-and-other-environment-settings-are-already-in-another-file) | |
+
 
 #### Option 1: The [snap way](https://snapcraft.io/install/docker/ubuntu):
 ```bash
